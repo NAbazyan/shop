@@ -1,0 +1,14 @@
+{% extends 'base_accounts.html' %}
+
+{% block title %}Вход в систему — MyShop{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto p-10 bg-[#00000050] rounded-lg mt-10">
+    <form method="post" class="flex-col flex justify-between items-center gap-10 p-10 text-[#4788F4FF] text-[20px] font-bold" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="p-10 bg-[#000]">Войти</button>
+    </form>
+</div>
+
+{% endblock %}

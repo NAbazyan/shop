@@ -1,0 +1,14 @@
+{% extends 'base_accounts.html' %}
+
+{% block title %}Вход в систему — MyShop{% endblock %}
+
+{% block content %}
+<div>
+    <form method="post" class="profile-form" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Войти</button>
+    </form>
+</div>
+
+{% endblock %}

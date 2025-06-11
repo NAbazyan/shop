@@ -1,0 +1,23 @@
+<!-- templates/products.html -->
+{% extends "base.html" %}
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl p-10 bg-[#00000040] ml-10 mt-5 flex rounded-lg gap-10">
+  <div class="w-[70%]">
+    <img class="w-full h-full object-cover rounded-lg" src="{{ product.image.url }}" alt="{{ product.name }}">
+  </div>
+  <div class="w-[30%]">
+    <h1 class="text-[3rem] font-bold mb-8">{{ product.name }}</h1>
+    <p class="text-[1rem] mb-10 text-[#444]">{{ product.description }}</p>
+    <p class="text-[1rem] mb-5 text-[#444]"><strong>Price:</strong> {{ product.price }}$</p>
+    <p class="text-[1rem] mb-5 text-[#444]"><strong>In stock:</strong> {{ product.quantity }}</p>
+    <p class="text-[1rem] mb-5 text-[#444]"><strong>Shop:</strong>
+      <a href="{% url 'market_detail_slug' market.slug %}">
+        {{ product.market.name }}
+      </a>
+    </p>
+  </div>
+</div>
+{% endblock %}
+

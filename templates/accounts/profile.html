@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная — MyShop{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto p-20 bg-[#00000050] mt-20 rounded-lg">
+    <h1 class="font-bold text-[25px] text-[#4788F4FF]">Profile</h1><br>
+    <p class="text-white">Email: {{ profile.user.email }}</p>
+    <p class="text-white">Name: {{ profile.user.username }}</p>
+    <p class="text-white">Balance: {{ profile.balance }}</p>
+    <p class="text-white">Data Log_In: {{ profile.user.date_joined }}</p>
+    <p class="text-white">Last_Login: {{ profile.user.last_login }}</p>
+</div>
+{% endblock %}

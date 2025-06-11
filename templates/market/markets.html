@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Магазины — MyShop{% endblock %}
+
+{% block content %}
+{% if markets %}
+<h1 class="text-[30px] ml-10 font-bold">Our Shops</h1>
+<div class="w-[95%] mx-auto flex gap-6 mt-6">
+    {% for market in markets %}
+    <div class="w-[20%] rounded-lg bg-[#00000020] transform hover:scale-95 transition-transform duration-300">
+        <div class=" p-10">
+            <h2 class="text-[#4788F4FF] text-[20px] font-bold">{{ market.name }}</h2>
+            <p class="text-[.95rem] text-[#555] mb-10">{{ market.description|truncatewords:15 }}</p>
+            <a href="{% url 'market_detail_slug' market.slug %}" class="bg-[#4788F4FF] text-white rounded-lg cursor-pointer p-2">Go To Shop</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p class="ml-10 text-xl text-gray-500">There are no stores yet.</p>
+{% endif %}
+{% endblock %}

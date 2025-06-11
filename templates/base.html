@@ -1,0 +1,49 @@
+<!-- templates/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}My Shop{% endblock %}</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <header class="w-full flex justify-center items-center p-4 bg-[#00000050]">
+        <div class="w-[97%] h-14 flex justify-center items-center">
+            <div class="w-[20%] h-full flex justify-start items-center">
+                <a class="text-[28px] font-bold text-[#4788F4FF]" href="{% url 'index' %}">My Market</a>
+            </div>
+            <div class="w-[80%] text-[18px] h-full flex justify-end items-center text-white gap-8">
+                <ul class="gap-8 flex justify-center items-center">
+                    <li><a class="cursor-pointer text-white hover:text-[#4788F4FF] transition duration-300"
+                            href="{% url 'index' %}">Home</a></li>
+                    <li><a class="cursor-pointer text-white hover:text-[#4788F4FF] transition duration-300"
+                            href="{% url 'markets' %}">Shops</a></li>
+                </ul>
+                <div class="list-none flex gap-8">
+                    {% if user.is_authenticated %}
+                    <a class="cursor-pointer text-white hover:text-[#4788F4FF] transition duration-300"
+                        href="{% url 'profile' %}">Profil</a>
+                    <a class="cursor-pointer text-white hover:text-[#4788F4FF] transition duration-300"
+                        href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                    <a class="cursor-pointer text-white hover:text-[#4788F4FF] transition duration-300"
+                        href="{% url 'login' %}">Login</a>
+                    <a class="cursor-pointer text-white hover:text-[#4788F4FF] transition duration-300"
+                        href="{% url 'register' %}">Register</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная — MyShop{% endblock %}
+
+{% block content %}
+<main class="max-w-6xl mx-auto bg-[#00000050] mt-10 p-20 rounded-lg flex-col text-center">
+  <h1 class="text-[48px] text-white font-bold">Welcome To My Market</h1>
+  <p class="text-white text-center mt-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel ex autem,
+    debitis odit maiores optio delectus modi ea. Earum vel ab quasi nihil unde maiores impedit necessitatibus! Omnis
+    voluptate corrupti, iure similique necessitatibus unde, voluptatem temporibus cum, earum maxime odit quasi
+    dignissimos voluptas vitae error quam recusandae nobis eius reiciendis ducimus ex porro libero illo! Culpa
+    reiciendis eveniet dolorum pariatur aperiam consectetur adipisci dolorem mollitia libero veritatis? Eveniet
+    numquam culpa dolorem ducimus quam rerum necessitatibus nesciunt ullam, laudantium qui eum quasi est Lorem ipsum
+    dolor sit amet. corrupti enim.</p><br><br>
+  <a class="bg-[#4788F4FF] text-white rounded-lg cursor-pointer p-4" href="{% url 'markets' %}">Shop now</a>
+</main>
+{% endblock %}
